@@ -1,4 +1,4 @@
-# ADVENTURE APP
+# Flutter Project
 
 Currently working on the android -V,
 
