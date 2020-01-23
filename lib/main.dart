@@ -1,40 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:dventure/Home.dart';
 
 void main() => runApp(Dventure());
 
-class
-
-class Dventure extends StatefulWidget{
-  @override
-  DventureState createState() => DventureState();
-
-}
-
-class DventureState extends State<Dventure>{
+class Dventure extends StatelessWidget{
   @override
   Widget build(BuildContext context){
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Dventure Kilifi'),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0, // this will be set when a new tab is tapped
-        items: [
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.home),
-            title: new Text('Home'),
-          ),
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.mail),
-            title: new Text('Messages'),
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              title: Text('Profile')
-          )
-        ],
-      ),
+    return MaterialApp(
+      title: 'Adventure Tours',
+      home: Home(),
     );
   }
-
 }
