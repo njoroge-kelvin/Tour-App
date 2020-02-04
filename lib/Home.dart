@@ -73,19 +73,23 @@ class HomeState extends State<Home>{
       child: ShopCategory(),
     ),
     Center(
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (BuildContext context, int index)=> Container(
-          child: Text('CHILD'),
-        margin: EdgeInsets.all(10.0),
-        padding: EdgeInsets.all(5.0),
-        decoration: BoxDecoration(
-          color: Colors.green,
-          shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(10.0),
+      child: Container(
+        margin: EdgeInsets.only(top: 50.0),
+        height: 50,
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (BuildContext context, int index)=> Container(
+            child: Text('CHILD'),
+          margin: EdgeInsets.all(5.0),
+          padding: EdgeInsets.all(5.0),
+          decoration: BoxDecoration(
+            color: Colors.green,
+            shape: BoxShape.rectangle,
+            borderRadius: BorderRadius.circular(10.0),
+          ),
         ),
-      ),
-        itemCount: 10,
+          itemCount: 10,
+        ),
       ),
     ),
     Center(

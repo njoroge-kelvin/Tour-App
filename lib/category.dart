@@ -16,28 +16,22 @@ class ShopCategoryState extends State<ShopCategory> {
         leading: Icon(Icons.restaurant_menu),
         backgroundColor: Colors.green,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            SizedBox(
-practic                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 20,
-                  itemBuilder: (BuildContext context, int index) =>
-                      Container(
-                        padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                      child: FloatingActionButton(
-                        child: Center(
-                          child: Text('buttonalise'),
-                        ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)
-                          ), onPressed: null)),
-                ))
-          ],
-        ),
-      ),
+      body: Container(
+          height: MediaQuery.of(context).size.height * 0.35,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: 20,
+            itemBuilder: (BuildContext context, int index) => Container(
+              width: MediaQuery.of(context).size.width * 0.6                                                                      ,
+                padding: EdgeInsets.only(left: 10.0, right: 10.0),
+                child: FloatingActionButton(
+                    child: Center(
+                      child: Text('buttonalise'),
+                    ),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    onPressed: null)),
+          )),
     );
   }
 }
