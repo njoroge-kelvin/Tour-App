@@ -69,9 +69,9 @@ class HomeState extends State<Home>{
         ],
       ),
     ),
-    Center(
-      child: ShopCategory(),
-    ),
+
+      ShopCategory(),
+
     Center(
       child: Container(
         margin: EdgeInsets.only(top: 50.0),
@@ -135,45 +135,7 @@ class HomeState extends State<Home>{
 //        backgroundColor: Colors.tealAccent,
 //      ),
       body: tabs[_cIndex],
-//      Column(
-//        mainAxisAlignment: MainAxisAlignment.start,
-//        mainAxisSize: MainAxisSize.max,
-//        children: <Widget>[
-//          Row(
-//            mainAxisAlignment: MainAxisAlignment.start,
-//            mainAxisSize: MainAxisSize.max,
-//            children: <Widget>[
-//              ButtonBar(
-//                children: <Widget>[
-//                  new RaisedButton(
-//                    onPressed: null,
-//                    child: new Text('Kilifi'),
-//                    focusColor: Colors.cyanAccent,
-//                    textColor: Colors.green,
-//                  ),
-//                  new RaisedButton(
-//                    onPressed: null,
-//                    child: new Text('Malindi'),
-//                  ),
-//                  new RaisedButton(
-//                    onPressed: null,
-//                    child: new Text('Mombasa'),
-//                  ),
-//                  new RaisedButton(
-//                    onPressed: null,
-//                    child: new Text('Watamu'),
-//                  ),
-//                  new RaisedButton(
-//                    onPressed: null,
-//                    child: new Text('Voi'),
-//                  ),
-//                ],
-//              )
-//            ],
-//          )
-//        ],
-//      ),
-      bottomNavigationBar: BottomNavigationBar(
+bottomNavigationBar: BottomNavigationBar(
           currentIndex: _cIndex,
           type: BottomNavigationBarType.fixed,
           backgroundColor: Colors.cyanAccent,
