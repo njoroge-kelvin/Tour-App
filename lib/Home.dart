@@ -10,11 +10,9 @@ class Home extends StatefulWidget {
 bool _isVisible;
 int _cIndex = 0;
 
-class HomeState extends State<Home>{
-
-
+class HomeState extends State<Home> {
   @override
-  void initState(){
+  void initState() {
     super.initState();
     _isVisible = true;
   }
@@ -30,96 +28,682 @@ class HomeState extends State<Home>{
       child: CustomScrollView(
         slivers: <Widget>[
           const SliverAppBar(
+            backgroundColor: Colors.amber,
             pinned: true,
-            expandedHeight: 250.0,
+            expandedHeight: 500.0,
             flexibleSpace: FlexibleSpaceBar(
-              title: Text('Demo'),
+              background: Image(
+                image: AssetImage('assets/image.jpeg'),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           SliverGrid(
-            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 200.0,
-              mainAxisSpacing: 10.0,
-              crossAxisSpacing: 10.0,
-              childAspectRatio: 4.0,
-            ),
-            delegate: SliverChildBuilderDelegate(
-                  (BuildContext context, int index) {
-                return Container(
-                  alignment: Alignment.center,
-                  color: Colors.teal[100 * (index % 9)],
-                  child: Text('Grid Item $index'),
-                );
-              },
-              childCount: 20,
-            ),
-          ),
-          SliverFixedExtentList(
-            itemExtent: 50.0,
-            delegate: SliverChildBuilderDelegate(
-                  (BuildContext context, int index) {
-                return Container(
-                  alignment: Alignment.center,
-                  color: Colors.lightBlue[100 * (index % 9)],
-                  child: Text('List Item $index'),
-                );
-              },
-            ),
-          ),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                ///no.of items in the horizontal axis
+                crossAxisCount: 2,
+              ),
+
+              ///Lazy building of list
+              delegate: SliverChildListDelegate([
+                Card(
+                  elevation: 8.0,
+                  child: Stack(
+                    children: <Widget>[
+                      Positioned(
+                        child: Container(
+                          margin: EdgeInsets.only(top: 10.0),
+                          height: 120.0,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(5.0), bottomRight: Radius.circular(5.0)),
+                              image: DecorationImage(image: AssetImage('assets/image.jpeg'),
+                              fit: BoxFit.cover),
+
+                            ),),
+                      ),
+                      new Positioned(
+                        left: 10.0,
+                        bottom: 5.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Center(
+                                      child: Text('1 Bedroom',
+                                          style: TextStyle(
+                                            color: Colors.brown,
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold,
+                                          )),
+                                    ))
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                      new Positioned(
+                        child: Icon(
+                          Icons.rate_review,
+                          color: Colors.green,
+                          size: 20.0,
+                        ),
+                        right: 15.0,
+                        bottom: 0.0,
+                      )
+                    ],
+                  ),
+                ),
+                Card(
+                  elevation: 8.0,
+                  child: Stack(
+                    children: <Widget>[
+                      Positioned(
+                        child: Container(
+                          margin: EdgeInsets.only(top: 10.0),
+                          height: 120.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(5.0), bottomRight: Radius.circular(5.0)),
+                            image: DecorationImage(image: AssetImage('assets/image1.jpeg'),
+                                fit: BoxFit.cover),
+
+                          ),),
+                      ),
+                      new Positioned(
+                        left: 10.0,
+                        bottom: 5.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Center(
+                                      child: Text('1 Bedroom',
+                                          style: TextStyle(
+                                            color: Colors.brown,
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold,
+                                          )),
+                                    ))
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                      new Positioned(
+                        child: Icon(
+                          Icons.rate_review,
+                          color: Colors.green,
+                          size: 20.0,
+                        ),
+                        right: 15.0,
+                        bottom: 0.0,
+                      )
+                    ],
+                  ),
+                ),
+                Card(
+                  elevation: 8.0,
+                  child: Stack(
+                    children: <Widget>[
+                      Positioned(
+                        child: Container(
+                          margin: EdgeInsets.only(top: 10.0),
+                          height: 120.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(5.0), bottomRight: Radius.circular(5.0)),
+                            image: DecorationImage(image: AssetImage('assets/image2.jpeg'),
+                                fit: BoxFit.cover),
+
+                          ),),
+                      ),
+                      new Positioned(
+                        left: 10.0,
+                        bottom: 5.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Center(
+                                      child: Text('1 Bedroom',
+                                          style: TextStyle(
+                                            color: Colors.brown,
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold,
+                                          )),
+                                    ))
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                      new Positioned(
+                        child: Icon(
+                          Icons.rate_review,
+                          color: Colors.green,
+                          size: 20.0,
+                        ),
+                        right: 15.0,
+                        bottom: 0.0,
+                      )
+                    ],
+                  ),
+                ),
+                Card(
+                  elevation: 8.0,
+                  child: Stack(
+                    children: <Widget>[
+                      Positioned(
+                        child: Container(
+                          margin: EdgeInsets.only(top: 10.0),
+                          height: 120.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(5.0), bottomRight: Radius.circular(5.0)),
+                            image: DecorationImage(image: AssetImage('assets/image3.jpeg'),
+                                fit: BoxFit.cover),
+
+                          ),),
+                      ),
+                      new Positioned(
+                        left: 10.0,
+                        bottom: 5.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Center(
+                                      child: Text('1 Bedroom',
+                                          style: TextStyle(
+                                            color: Colors.brown,
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold,
+                                          )),
+                                    ))
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                      new Positioned(
+                        child: Icon(
+                          Icons.rate_review,
+                          color: Colors.green,
+                          size: 20.0,
+                        ),
+                        right: 15.0,
+                        bottom: 0.0,
+                      )
+                    ],
+                  ),
+                ),
+                Card(
+                  elevation: 8.0,
+                  child: Stack(
+                    children: <Widget>[
+                      Positioned(
+                        child: Container(
+                          margin: EdgeInsets.only(top: 10.0),
+                          height: 120.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(5.0), bottomRight: Radius.circular(5.0)),
+                            image: DecorationImage(image: AssetImage('assets/image4.jpeg'),
+                                fit: BoxFit.cover),
+
+                          ),),
+                      ),
+                      new Positioned(
+                        left: 10.0,
+                        bottom: 5.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Center(
+                                      child: Text('1 Bedroom',
+                                          style: TextStyle(
+                                            color: Colors.brown,
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold,
+                                          )),
+                                    ))
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                      new Positioned(
+                        child: Icon(
+                          Icons.rate_review,
+                          color: Colors.green,
+                          size: 20.0,
+                        ),
+                        right: 15.0,
+                        bottom: 0.0,
+                      )
+                    ],
+                  ),
+                ),
+                Card(
+                  elevation: 8.0,
+                  child: Stack(
+                    children: <Widget>[
+                      Positioned(
+                        child: Container(
+                          margin: EdgeInsets.only(top: 10.0),
+                          height: 120.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(5.0), bottomRight: Radius.circular(5.0)),
+                            image: DecorationImage(image: AssetImage('assets/image5.jpeg'),
+                                fit: BoxFit.cover),
+
+                          ),),
+                      ),
+                      new Positioned(
+                        left: 10.0,
+                        bottom: 5.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Center(
+                                      child: Text('1 Bedroom',
+                                          style: TextStyle(
+                                            color: Colors.brown,
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold,
+                                          )),
+                                    ))
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                      new Positioned(
+                        child: Icon(
+                          Icons.rate_review,
+                          color: Colors.green,
+                          size: 20.0,
+                        ),
+                        right: 15.0,
+                        bottom: 0.0,
+                      )
+                    ],
+                  ),
+                ),
+                Card(
+                  elevation: 8.0,
+                  child: Stack(
+                    children: <Widget>[
+                      Positioned(
+                        child: Container(
+                          margin: EdgeInsets.only(top: 10.0),
+                          height: 120.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(5.0), bottomRight: Radius.circular(5.0)),
+                            image: DecorationImage(image: AssetImage('assets/image6.jpeg'),
+                                fit: BoxFit.cover),
+
+                          ),),
+                      ),
+                      new Positioned(
+                        left: 10.0,
+                        bottom: 5.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Center(
+                                      child: Text('1 Bedroom',
+                                          style: TextStyle(
+                                            color: Colors.brown,
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold,
+                                          )),
+                                    ))
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                      new Positioned(
+                        child: Icon(
+                          Icons.rate_review,
+                          color: Colors.green,
+                          size: 20.0,
+                        ),
+                        right: 15.0,
+                        bottom: 0.0,
+                      )
+                    ],
+                  ),
+                ),
+                Card(
+                  elevation: 8.0,
+                  child: Stack(
+                    children: <Widget>[
+                      Positioned(
+                        child: Container(
+                          margin: EdgeInsets.only(top: 10.0),
+                          height: 120.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(5.0), bottomRight: Radius.circular(5.0)),
+                            image: DecorationImage(image: AssetImage('assets/image7.jpeg'),
+                                fit: BoxFit.cover),
+
+                          ),),
+                      ),
+                      new Positioned(
+                        left: 10.0,
+                        bottom: 5.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Center(
+                                      child: Text('1 Bedroom',
+                                          style: TextStyle(
+                                            color: Colors.brown,
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold,
+                                          )),
+                                    ))
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                      new Positioned(
+                        child: Icon(
+                          Icons.rate_review,
+                          color: Colors.green,
+                          size: 20.0,
+                        ),
+                        right: 15.0,
+                        bottom: 0.0,
+                      )
+                    ],
+                  ),
+                ),
+                Card(
+                  elevation: 8.0,
+                  child: Stack(
+                    children: <Widget>[
+                      Positioned(
+                        child: Container(
+                          margin: EdgeInsets.only(top: 10.0),
+                          height: 120.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(5.0), bottomRight: Radius.circular(5.0)),
+                            image: DecorationImage(image: AssetImage('assets/image8.jpeg'),
+                                fit: BoxFit.cover),
+
+                          ),),
+                      ),
+                      new Positioned(
+                        left: 10.0,
+                        bottom: 5.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Center(
+                                      child: Text('1 Bedroom',
+                                          style: TextStyle(
+                                            color: Colors.brown,
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold,
+                                          )),
+                                    ))
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                      new Positioned(
+                        child: Icon(
+                          Icons.rate_review,
+                          color: Colors.green,
+                          size: 20.0,
+                        ),
+                        right: 15.0,
+                        bottom: 0.0,
+                      )
+                    ],
+                  ),
+                ),
+                Card(
+                  elevation: 8.0,
+                  child: Stack(
+                    children: <Widget>[
+                      Positioned(
+                        child: Container(
+                          margin: EdgeInsets.only(top: 10.0),
+                          height: 120.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(5.0), bottomRight: Radius.circular(5.0)),
+                            image: DecorationImage(image: AssetImage('assets/image9.jpeg'),
+                                fit: BoxFit.cover),
+
+                          ),),
+                      ),
+                      new Positioned(
+                        left: 10.0,
+                        bottom: 5.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Center(
+                                      child: Text('1 Bedroom',
+                                          style: TextStyle(
+                                            color: Colors.brown,
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold,
+                                          )),
+                                    ))
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                      new Positioned(
+                        child: Icon(
+                          Icons.rate_review,
+                          color: Colors.green,
+                          size: 20.0,
+                        ),
+                        right: 15.0,
+                        bottom: 0.0,
+                      )
+                    ],
+                  ),
+                ),
+                Card(
+                  elevation: 8.0,
+                  child: Stack(
+                    children: <Widget>[
+                      Positioned(
+                        child: Container(
+                          margin: EdgeInsets.only(top: 10.0),
+                          height: 120.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(5.0), bottomRight: Radius.circular(5.0)),
+                            image: DecorationImage(image: AssetImage('assets/image10.jpeg'),
+                                fit: BoxFit.cover),
+
+                          ),),
+                      ),
+                      new Positioned(
+                        left: 10.0,
+                        bottom: 5.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Center(
+                                      child: Text('1 Bedroom',
+                                          style: TextStyle(
+                                            color: Colors.brown,
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold,
+                                          )),
+                                    ))
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                      new Positioned(
+                        child: Icon(
+                          Icons.rate_review,
+                          color: Colors.green,
+                          size: 20.0,
+                        ),
+                        right: 15.0,
+                        bottom: 0.0,
+                      )
+                    ],
+                  ),
+                ),
+                Card(
+                  elevation: 8.0,
+                  child: Stack(
+                    children: <Widget>[
+                      Positioned(
+                        child: Container(
+                          margin: EdgeInsets.only(top: 10.0),
+                          height: 120.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(5.0), bottomRight: Radius.circular(5.0)),
+                            image: DecorationImage(image: AssetImage('assets/image11.jpeg'),
+                                fit: BoxFit.cover),
+
+                          ),),
+                      ),
+                      new Positioned(
+                        left: 10.0,
+                        bottom: 5.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Center(
+                                      child: Text('1 Bedroom',
+                                          style: TextStyle(
+                                            color: Colors.brown,
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold,
+                                          )),
+                                    ))
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                      new Positioned(
+                        child: Icon(
+                          Icons.rate_review,
+                          color: Colors.green,
+                          size: 20.0,
+                        ),
+                        right: 15.0,
+                        bottom: 0.0,
+                      )
+                    ],
+                  ),
+                ),
+              ])),
         ],
       ),
     ),
-
-      ShopCategory(),
-
+    ShopCategory(),
     Center(
       child: Container(
         margin: EdgeInsets.only(top: 50.0),
         height: 50,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemBuilder: (BuildContext context, int index)=> Container(
+          itemBuilder: (BuildContext context, int index) => Container(
             child: Text('CHILD'),
-          margin: EdgeInsets.all(5.0),
-          padding: EdgeInsets.all(5.0),
-          decoration: BoxDecoration(
-            color: Colors.green,
-            shape: BoxShape.rectangle,
-            borderRadius: BorderRadius.circular(10.0),
+            margin: EdgeInsets.all(5.0),
+            padding: EdgeInsets.all(5.0),
+            decoration: BoxDecoration(
+              color: Colors.green,
+              shape: BoxShape.rectangle,
+              borderRadius: BorderRadius.circular(10.0),
+            ),
           ),
-        ),
           itemCount: 10,
         ),
       ),
     ),
     Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          GestureDetector(
-            onTap: (){
-              if(_isVisible){
-                _isVisible = !_isVisible;
-                Torch.turnOn();
-              }else{
-                _isVisible = !_isVisible;
-                Torch.turnOff();
-              }
-            },
-            child: Visibility(
-              child: Container(
-                padding: EdgeInsets.all(50.0),
-                decoration: BoxDecoration(
-                  color: Colors.purple,
-                  shape: BoxShape.circle,
-                ),
-                child: Text(
-                  'Torch'
-                ),
-              ),
+      child: GestureDetector(
+        onTap: () {
+          if (_isVisible) {
+            _isVisible = !_isVisible;
+            Torch.turnOn();
+          } else {
+            _isVisible = !_isVisible;
+            Torch.turnOff();
+          }
+        },
+        child: Visibility(
+          child: Container(
+            padding: EdgeInsets.all(50.0),
+            decoration: BoxDecoration(
+              color: Colors.purple,
+              shape: BoxShape.circle,
             ),
+            child: Text('Torch'),
           ),
-        ],
+        ),
       ),
     ),
     Center(
@@ -135,26 +719,44 @@ class HomeState extends State<Home>{
 //        backgroundColor: Colors.tealAccent,
 //      ),
       body: tabs[_cIndex],
-bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: BottomNavigationBar(
           currentIndex: _cIndex,
           type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.cyanAccent,
+          backgroundColor: Colors.black,
           selectedItemColor: Colors.green,
           items: [
             BottomNavigationBarItem(
-              icon: new Icon(Icons.home),
+              icon: new Icon(
+                Icons.home,
+                color: Colors.white,
+              ),
               title: new Text('Home'),
             ),
             BottomNavigationBarItem(
-              icon: new Icon(Icons.mail),
+              icon: new Icon(
+                Icons.mail,
+                color: Colors.white,
+              ),
               title: new Text('Messages'),
             ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.person), title: Text('Profile')),
+                icon: Icon(
+                  Icons.person,
+                  color: Colors.white,
+                ),
+                title: Text('Profile')),
             BottomNavigationBarItem(
-                icon: Icon(Icons.cake), title: Text('Food')),
+                icon: Icon(
+                  Icons.cake,
+                  color: Colors.white,
+                ),
+                title: Text('Food')),
             BottomNavigationBarItem(
-                icon: Icon(Icons.credit_card), title: Text('pay')),
+                icon: Icon(
+                  Icons.credit_card,
+                  color: Colors.white,
+                ),
+                title: Text('pay')),
           ],
           onTap: (index) {
             setState(() {

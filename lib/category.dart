@@ -50,28 +50,32 @@ class ShopCategoryState extends State<ShopCategory> {
                         )),
                   ),
                   Container(
-                    padding: EdgeInsets.only(top: 10.0),
                     height: MediaQuery.of(context).size.height * 0.20,
                     child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: 20,
                         itemBuilder: (BuildContext context, int index) => Container(
+                            width: MediaQuery.of(context).size.width * 0.9,
+                            padding: EdgeInsets.only(right: 100.0),
+                            margin: EdgeInsets.only(right: 10.0),
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30.0),
+                              borderRadius: BorderRadius.circular(10.0),
                               image: new DecorationImage(
                                 image: new AssetImage('assets/Screenshot from 2019-12-21 00-58-31.png'),
                                     fit: BoxFit.fitWidth,
                               )
                             ),
-                            width: MediaQuery.of(context).size.width * 0.9,
-                            padding: EdgeInsets.only(left: 5.0),
-                            child: Text('Scenaries',
-                            style: TextStyle(
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.bold,
-                              fontStyle: FontStyle.italic,
-                            )
-                            )
+//                            child: new Positioned(
+//                              left: 0.0,
+//                              bottom: 0.0,
+//                              child: Text('Scenaries',
+//                              style: TextStyle(
+//                                fontSize: 10.0,
+//                                color: Colors.white,
+//                                fontStyle: FontStyle.italic,
+//                              )
+//                              ),
+//                            )
 
                         )),
                   ),
