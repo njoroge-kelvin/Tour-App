@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:dventure/category.dart';
-import 'package:torch/torch.dart';
 import 'package:dventure/HomePage.dart';
 
 class Home extends StatefulWidget {
@@ -48,29 +47,6 @@ class HomeState extends State<Home> {
       ),
     ),
     Center(
-      child: GestureDetector(
-        onTap: () {
-          if (_isVisible) {
-            _isVisible = !_isVisible;
-            Torch.turnOn();
-          } else {
-            _isVisible = !_isVisible;
-            Torch.turnOff();
-          }
-        },
-        child: Visibility(
-          child: Container(
-            padding: EdgeInsets.all(50.0),
-            decoration: BoxDecoration(
-              color: Colors.purple,
-              shape: BoxShape.circle,
-            ),
-            child: Text('Torch'),
-          ),
-        ),
-      ),
-    ),
-    Center(
       child: Text('5'),
     ),
   ];
@@ -94,33 +70,33 @@ class HomeState extends State<Home> {
                 Icons.home,
                 color: Colors.white,
               ),
-              title: new Text('Home'),
+              label: 'Home',
             ),
             BottomNavigationBarItem(
               icon: new Icon(
                 Icons.mail,
                 color: Colors.white,
               ),
-              title: new Text('Messages'),
+              label: 'Message'
             ),
             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.person,
                   color: Colors.white,
                 ),
-                title: Text('Profile')),
+                label: 'Profile'),
             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.cake,
                   color: Colors.white,
                 ),
-                title: Text('Food')),
+                label: 'Food'),
             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.credit_card,
                   color: Colors.white,
                 ),
-                title: Text('pay')),
+                label: 'pay'),
           ],
           onTap: (index) {
             setState(() {
